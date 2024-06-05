@@ -41,7 +41,7 @@ SAMPLE RATE
 IRs are normally saved as WAVE files at a standard sample rate, such as 44.1 kHz. But they can be created
 at any frequency. If your using the IR in this VST, you will want the IR sample rate to match the rate your
 DAW is running in. Normally, a VST would identify the sample rate and resample the file data to match the
-DAW sample rate. This VST does not do that because you have comtrol of the resampling process under the
+DAW sample rate. This VST does not do that because you have control of the resampling process under the
 SIZE adjustment.
 
 FILE SIZE  
@@ -54,6 +54,16 @@ MIXING
 This VST allows you to load two IRs for each channel of audio (Left, Right). The IRs can be mixed in the VST.
 For best results the IR pulses in the files should be aligned in time. It is not necessary, but may provide 
 a better mix. This VST does not try to align the pulses. Again, that operation should be done in an audio editor before use.  
+
+STRINGS IN A VST  
+When the VST standard was created, strings were not added. A DAWs access is mainly for changing parameters. 
+There are no use cases where the DAW would ever adjust a string. This creates a problem for dealing with IRs.
+Because IRs are files. Files have file paths that need to be sotred. We cant save paths natively in the VST/DAW interface.
+
+To get around this issue, this program has its own PRESET storage code. And it has code that loads/saves the last used IRs.
+The last used IRs are loaded when the program starts.
+
+There are methods that will allow the paths to be saved in the normal JUCE XML parameters. But they are not used in this app.
 
 
 
