@@ -84,25 +84,23 @@ LOW CUT
 When using Thump, the very low frequencies of the signal are amplified. Use the lo cut to remove the frequencies that
 are making the sound muddy, woofy, etc.
 
-TRIM AND CPU GATE  
+TRIM AND CPU GATE - GIMMICKS  
 The calculations for an IR are very expensive for CPU usage. Every single sample of your audio needs to be multiplied by the IR.
-That means thousands of multiplies for every sample of adat you send thru the VST. When running in stereo, you are doing all these
+That means thousands of multiplies for every sample of data you send thru the VST. When running in stereo, you are doing all these
 calcs twice.
 
-For that reason, it is best to normally use 1024 sample IRs in Mono. That uses the least amount CPU. The smaller the IR sample size,
+For that reason, it is best to normally use 1024 sample IRs in Mono. That uses the least amount of CPU. The smaller the IR sample size,
 the worse the low frequency response is. 1024 = fastest and 2048 = best quality.
 
-Since 90% of the sound created by an IR is only in the first 10% of the IR file, we have added a TRIM dial that lets you adjust how many
+Since 90% of the sound created by an IR is only in the first 10% of the IR file, we have added a TRIM slider that lets you adjust how many
 samples you want to use. It adjusts from 0% size to 100% size. This reduces the CPU load. Dial it down until the sounds gets bad. When
 you go to do your final DAW render, set the TRIM back to full size to get the better audio quality.
 
 90% of the time a VST is in use, it is probably sitting idle. The CPU gate is a typical noise gate that bypasses the IR calculations
-if no signal is detected. When doing final renders, turn this feature off to guarentee better audio quality.
+if no signal is detected. When doing final renders, turn this feature off to guarentee better audio quality. It will introduce weird
+sounds when notes slowly die out. 
 
 Both TRIM and GATE are tools to help reduce CPU usage while tweaking. Do not use for final rendering of audio. 
-
-
-
 
 <br />
 
