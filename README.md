@@ -73,7 +73,7 @@ a better mix. This VST does not try to align the pulses. Again, that operation s
 STRINGS IN A VST  
 When the VST standard was created, strings were not added. A DAWs access is mainly for changing parameters. 
 There are no use cases where the DAW would ever adjust a string. This creates a problem for dealing with IRs.
-Because IRs are files. Files have file paths that need to be sotred. We cant save paths natively in the VST/DAW interface.
+Because IRs are files. Files have file paths that need to be stored. We cant save paths natively in the VST/DAW interface.
 
 To get around this issue, this program has its own PRESET storage code. And it has code that loads/saves the last used IRs.
 The last used IRs are loaded when the program starts.
