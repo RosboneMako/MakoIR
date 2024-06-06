@@ -40,10 +40,16 @@ An IR is a pulse that defines the frequency reponse of a system (speaker). They 
 sending a single sample pulse thru a system or by doing a frequency sweep of a system. Once tests
 are completed you will have a soft rising pulse that rings (oscillates).
 
-The pulse represents the frequency response of the speaker. Think of each sample in the IR as a volume for a delay.
-So a 1024 sample IR is really just the volumes for 1024 delay pedals all set at different times. Every delay creates
+The IR pulse represents the frequency response of the speaker. Think of each sample in the IR as a volume for a delay.
+So a 1024 sample IR is really just the volumes for 1024 delay pedals all set to different times. Every delay creates a
 comb filter. Basically a dip in the frequency resonse. When you add all of these echoes together, the comb filter effects
-and volumes will create the frequency response of the speaker.  
+and volumes will create the frequency response of the speaker.
+
+Taken to the next logical step, there are IRs that are used as reverbs. These IRs will be very very very large of course.
+Our 1024 sample IR @ 48 kHz is basically a reverb pedal with only 23 mS worth of data. And the 1024 IR is heavy on CPU usage.
+Now imagine a 10 or 20 second reverb IR. No processor can do that much math as fast as needed. So tricks need to be employed
+to mimic the actual IR, like only using part of the IR and then applying an EQ to simulate the rest of the IR. But you now 
+have the tools to make an IR Reverb that uses millions of samples if you want. It will only work during mixdown of course.
 
 SAMPLE RATE  
 IRs are normally saved as WAVE files at a standard sample rate, such as 44.1 kHz. But they can be created
