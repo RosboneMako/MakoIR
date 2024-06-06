@@ -1,4 +1,4 @@
-# Mako IR
+# Mako IR VST
 * JUCE VST3 Guitar Speaker Sim.
 * Tested on Windows only.
 * Written in Visual C++ 2022.
@@ -21,7 +21,9 @@ starting place. Or be brave and try this.
        
 SUMMARY
 ------------------------------------------------------------------
-A Juce/C++ VST3 written to simulate a speaker cabinet. 
+A Juce/C++ VST3 written to simulate a speaker cabinet. This VST uses its own routines to deal 
+with IRs. Juce has some built in IR functions because it is awesome, but thats no fun. And it 
+does not help anyone learn about IRs. Better to write your own and learn when possible.
 
 ![Demo Image](docs/assets/makoir_demo_01.png)
 
