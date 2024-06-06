@@ -40,8 +40,9 @@ An IR is a pulse that defines the frequency reponse of a system (speaker). They 
 sending a single sample pulse thru a system or by doing a frequency sweep of a system. Once tests
 are completed you will have a soft rising pulse that rings (oscillates).
 
-The IR pulse represents the frequency response of the speaker. Think of each sample in the IR as a volume for a delay.
-So a 1024 sample IR is really just the volumes for 1024 delay pedals all set to different times. Every delay creates a
+The IR pulse represents the frequency response of the speaker. Well not just the speaker. The speaker, the microphone used, the amplifier used, the echoes/reverb of the room it is in, etc etc.
+
+So I think of each sample in the IR as a volume for a delay. So a 1024 sample IR is really just the volumes for 1024 delay pedals all set to different times. Every delay creates a
 comb filter. Basically a dip in the frequency resonse. When you add all of these echoes together, the comb filter effects
 and volumes will create the frequency response of the speaker.
 
