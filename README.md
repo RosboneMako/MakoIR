@@ -40,9 +40,14 @@ An IR is a pulse that defines the frequency reponse of a system (speaker). They 
 sending a single sample pulse thru a system or by doing a frequency sweep of a system. Once tests
 are completed you will have a soft rising pulse that rings (oscillates).
 
+The pulse represents the frequency response of the speaker. Think of each sample in the IR as a volume for a delay.
+So a 1024 sample IR is really just the volumes for 1024 delay pedals all set at different times. Every delay creates
+comb filter. Basically a dip in the frequency resonse. When you add all of these echoes together, the comb filter effects
+and volumes will create the frequency response of the speaker.  
+
 SAMPLE RATE  
 IRs are normally saved as WAVE files at a standard sample rate, such as 44.1 kHz. But they can be created
-at any frequency. If your using the IR in this VST, you will want the IR sample rate to match the rate your
+at any frequency. If you are using the IR in this VST, you will want the IR sample rate to match the rate your
 DAW is running in. Normally, a VST would identify the sample rate and resample the file data to match the
 DAW sample rate. This VST does not do that because you have control of the resampling process under the
 SIZE adjustment.
