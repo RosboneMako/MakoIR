@@ -27,6 +27,7 @@ A Juce/C++ VST3 written to simulate a speaker cabinet.
 
 # THEORY OF OPERATION<br />
 This VST is designed to simulate a speaker cabinet. It uses standard Impulse Response (IR) files.
+This VST can be useful to fine tune things like other Guitar Amplifier VSTs.
 
 The IR files this VST works with are:
 - A wave file that has a pulse 1024 or 2048 samples in length.
@@ -64,6 +65,42 @@ To get around this issue, this program has its own PRESET storage code. And it h
 The last used IRs are loaded when the program starts.
 
 There are methods that will allow the paths to be saved in the normal JUCE XML parameters. But they are not used in this app.
+
+# FEATURES <br />
+IR MIXER  
+As mentioned above, you can mix two IRs to give you control over the IR sound.  
+
+STEREO OPERATION  
+Each audio channel can use a seperate IR. Having a stereo field helps the sound feel larger and more lively. 
+
+SPEAKER SIZE  
+Each IR channel can be resampled (rescaled) to sound like a larger or smaller speaker.
+
+THUMP 
+Every Mako VST has a feature called Thump. It is a low pass filtered signal that gets amplified to simulate a
+speaker cabinets resonance and compression. 
+
+LOW CUT  
+When using Thump, the very low frequencies of the signal are amplified. Use the lo cut to remove the frequencies that
+are making the sound muddy, woofy, etc.
+
+TRIM AND CPU GATE  
+The calculations for an IR are very expensive for CPU usage. Every single sample of your audio needs to be multiplied by the IR.
+That means thousands of multiplies for every sample of adat you send thru the VST. When running in stereo, you are doing all these
+calcs twice.
+
+For that reason, it is best to normally use 1024 sample IRs in Mono. That uses the least amount CPU. The smaller the IR sample size,
+the worse the low frequency response is. 1024 = fastest and 2048 = best quality.
+
+Since 90% of the sound created by an IR is only in the first 10% of the IR file, we have added a TRIM dial that lets you adjust how many
+samples you want to use. It adjusts from 0% size to 100% size. This reduces the CPU load. Dial it down until the sounds gets bad. When
+you go to do your final DAW render, set the TRIM back to full size to get the better audio quality.
+
+90% of the time a VST is in use, it is probably sitting idle. The CPU gate is a typical noise gate that bypasses the IR calculations
+if no signal is detected. When doing final renders, turn this feature off to guarentee better audio quality.
+
+Both TRIM and GATE are tools to help reduce CPU usage while tweaking. Do not use for final rendering of audio. 
+
 
 
 
